@@ -27,8 +27,7 @@ sure you have some of the requriements you need including:
 	Amber McBride - "Operations Manager - Makes sure everyhing is running efficiently and effectively"
 	Sofía Cheung -  "Asst. Development Manager - Developing - Methods, New Line, Executable, etc"
 	Kenneth Mensah -  "Development Manager - Developing - New Line, Executable, etc"
-	**Grayson Stiegler**
- -  "Marketing and Branding Manager - Project name, README, AUTHORS, Documentation"
+	Grayson Stiegler -  "Marketing and Branding Manager - Project name, README, AUTHORS, Documentation"
 
 
 
