@@ -25,5 +25,6 @@ with tempfile.TemporaryDirectory() as path:
     # git clone the repo to the path
     print("getting Repo")
     git.Git(path).clone(repo)
-    readme_check = Checks()
-    readme_check.check_README(path)
+    my_check = Checks()
+    my_check.check_README(path)
+    my_check.check_executable(path)
