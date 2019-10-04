@@ -10,7 +10,7 @@ if __name__ == "__main__":
             variable = json.load(vars)
             repo = variable["repo"].split("/")[4].split(".")[0]
         with open(variable["path"] + "/" + repo + "/README.md") as r:
-            if len(r.read()) < 0:
+            if len(r.read()) < 100:
                 print("README.md does not exist or is not long enough.")
             else:
                 print("README.md looks good, but can always be better.")
