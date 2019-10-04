@@ -10,5 +10,7 @@ if __name__ == "__main__":
         tasks = {};
         failed_tasks = {};
         req = requests.get('https://intranet.hbtn.io/projects/260.json?auth_token={}'.format(auth_id))
-        name = req.json.get('name')
+        name = req.json().get('name')
         return name
+
+find_project_name()

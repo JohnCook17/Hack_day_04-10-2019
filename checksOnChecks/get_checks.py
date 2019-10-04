@@ -19,10 +19,12 @@ if __name__ == "__main__":
             req_correction = requests.post('https://intranet.hbtn.io/tasks/{}/start_correction.json?auth_token={}'.format(taskid, auth_id))
             correction_id = (req_correction.json().get('id'))
             correction_res = requests.get('https://intranet.hbtn.io/correction_requests/{}.json?auth_token={}'.format(correction_id, auth_id))
-            check_list = res_corr.json().get('result_display').get('checks')
+            check_list = correction_res.json().get('result_display').get('checks')
             for check in check_list:
                 if check.get('check_label') == "requirement" and check.get('passed') is False:
                     failed_tasks['taskname'] = taskid
 
         print(failed_tasks)
         return failed_tasks
+
+find_failed_checks()
