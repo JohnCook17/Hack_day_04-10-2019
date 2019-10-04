@@ -21,7 +21,7 @@ sure you have some of the requriements you need including:
 
 # **Organization**
 
-     You will work by team of ~8, it’s important to stay organized! We are strongly recommending you to nominate a product manager to follow each part of your project:
+    You will work by team of ~8, it’s important to stay organized! We are strongly recommending you to nominate a product manager to follow each part of your project:
 
 	John Cook - "Product Manager - Owner of Repository"
 	Amber McBride - "Operations Manager - Makes sure everyhing is running efficiently and effectively"
