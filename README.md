@@ -41,6 +41,11 @@ sure you have some of the requriements you need including:
 	4. Import the package `checksOnChecks`
 	5. Run the `main.py` file in the command line
 
+**To Check for a new line**
+
+
+![NEW LINE](newline.png)
+
 
 
 
