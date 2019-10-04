@@ -1,7 +1,11 @@
 #!/usr/bin/python3
 
-# importing os
-import os
+# importing tempfile
+import tempfile
+# importing json
+import json
+# importing checks
+from checksOnChecks.check_README import Checks
 # import gitpython
 try:
     import git
@@ -12,19 +16,14 @@ except ImportError:
 # get checker api key and check if they are missing any checks
 # if missing checks clone repo to check for basic mistakes
 
-# path and repo below, should probably move to json file
-
-path = "/mnt/c/dev/test_repo"
-repo = "https://github.com/JohnCook17/holbertonschool-zero_day.git"
-
-
-# make path and git clone the repo to the path
-try:
-    os.mkdir(path)
-except OSError:
-    print("Creation of the directory %s failed" % path)
-else:
-    print("Successfully created the directory %s" % path)
-
-git.Git(path).clone(repo)
-
+# makes a temporary directory and saves the github repo to it
+with tempfile.TemporaryDirectory() as path:
+    #open the json and load the repo
+    with open("vars.json") as vars:
+                variable = json.load(vars)
+    repo = variable["repo"]
+    # git clone the repo to the path
+    print("getting Repo")
+    git.Git(path).clone(repo)
+    readme_check = Checks()
+    readme_check.check_README(path)
