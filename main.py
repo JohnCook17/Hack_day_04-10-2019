@@ -8,7 +8,10 @@ import json
 from checksOnChecks.check_README import Checks
 # import gitpython
 from checksOnChecks.auth_token import get_auth
-from checksOnChecks.get_checks import checker
+from checksOnChecks.get_checks import find_failed_checks
+from checksOnChecks.get_checks import get_correction_ids
+
+
 import sys
 
 try:
@@ -18,9 +21,10 @@ except ImportError:
     print("see https://gitpython.readthedocs.io/en/stable/intro.html\
           for more details")
 
+failed_check_dict = {}
 # get checker api auth_token and check if they are missing any checks
 authToken = get_auth(sys.argv[1], sys.argv[2], sys.argv[3])
-# failed_check_dict =
+failed_check_dict = find_failed_checks(authToken, sys.argv[4])
 
 # if missing checks clone repo to check for basic mistakes
 
@@ -28,19 +32,18 @@ authToken = get_auth(sys.argv[1], sys.argv[2], sys.argv[3])
 with tempfile.TemporaryDirectory() as path:
     # open the json and load the repo
     with open("vars.json") as vars:
-                variable = json.load(vars)
+        variable = json.load(vars)
     repo = variable["repo"]
     # git clone the repo to the path
     print("getting Repo")
-    failed_checks = checker()
-    if failed_checks.find_failed_checks(correction_ids=None):
+    if failed_check_dict == {}:
         git.Git(path).clone(repo)
         my_check = Checks()
         my_check.check_README(path)
         my_check.check_executable(path)
 
 print('You have {:d} with missing requirement checks'
-      .format(len(failed_check_list)))
+      .format(len(failed_check_dict)))
 commonMistakes = """      Common Mistakes you may have missed
 
                  Did you remember all the semicolons
