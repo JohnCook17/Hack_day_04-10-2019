@@ -48,6 +48,12 @@ If you are missing and requirement checks, we have you back! :)
 ![ALL REQ](allreq.png)
 
 
+**Missing Requirement Checks**
+
+
+![RED](forHackDay.PNG)
+
+
 # **Authors**
 
 John Cook - Email [john.cook@holbertonschool.com] / Github [https://github.com/JohnCook17] / Twitter [https://twitter.com/celox_umbra]
