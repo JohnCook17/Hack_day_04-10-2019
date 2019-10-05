@@ -40,14 +40,16 @@ with tempfile.TemporaryDirectory() as path:
         git.Git(path).clone(repo)
         my_check = Checks()
         my_check.check_README(path)
-        my_check.check_executable(path)
-
-print(failed_check_list)
+        # this is not working so for now we are not using it.
+        # my_check.check_executable(path)
+if len(failed_check_list) == 0:
+    print('You are not missing any requirement checks! Good Job!!!')
 if len(failed_check_list) == 1:
-    print('You have {:d} task with missing requirement checks')
-else if len(failed_check_list) > 1:
-    print('You have {:d} tasks with missing requirement checks')
-      .format(len(failed_check_list)))
+    print('You have {:d} task with missing requirement checks'
+          .format(len(failed_check_list)))
+elif len(failed_check_list) > 1:
+    print('You have {:d} tasks with missing requirement checks'
+          .format(len(failed_check_list)))
 commonMistakes = """      Common Mistakes you may have missed
 
                  Did you remember all the semicolons
@@ -60,4 +62,5 @@ commonMistakes = """      Common Mistakes you may have missed
                  Are you printing the required output?
                  Did you follow all the directions for this task?
                 """
-print(commonMistakes)
+if len(failed_check_list) != 0:
+    print(commonMistakes)
