@@ -8,6 +8,7 @@ import json
 from checksOnChecks.check_README import Checks
 # import gitpython
 from checksOnChecks.auth_token import get_auth
+from checksOnChecks.get_checks import checker
 import sys
 
 try:
@@ -31,10 +32,12 @@ with tempfile.TemporaryDirectory() as path:
     repo = variable["repo"]
     # git clone the repo to the path
     print("getting Repo")
-    git.Git(path).clone(repo)
-    my_check = Checks()
-    my_check.check_README(path)
-    my_check.check_executable(path)
+    failed_checks = checker()
+    if failed_checks.find_failed_checks(correction_ids=None):
+        git.Git(path).clone(repo)
+        my_check = Checks()
+        my_check.check_README(path)
+        my_check.check_executable(path)
 
 print('You have {:d} with missing requirement checks'
       .format(len(failed_check_list)))
