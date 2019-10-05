@@ -43,12 +43,12 @@ If you are missing and requirement checks, we have you back! :)
 
 
 
-**All Requirements**
+# **All Requirements**
 
 ![ALL REQ](allreq.png)
 
 
-**Missing Requirement Checks**
+# **Missing Requirement Checks**
 
 
 ![RED](forHackDay.PNG)
