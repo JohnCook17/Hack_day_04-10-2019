@@ -8,7 +8,7 @@ sure you have some of the requriements you need including:
      * README exists, is not empty and or is empty
      * File is executable
      * If file has a new line
-
+If you are missing and requirement checks, we have you back! :)
 
 ![Req. Checker](check.png)
 
@@ -21,17 +21,11 @@ sure you have some of the requriements you need including:
 
 # **Organization**
 
-    You will work by team of ~8, it’s important to stay organized! We are strongly recommending you to nominate a product manager to follow each part of your project:
-
 	John Cook - "Product Manager - Owner of Repository"
 	Amber McBride - "Operations Manager - Makes sure everyhing is running efficiently and effectively"
 	Sofía Cheung -  "Asst. Development Manager - Developing - Methods, New Line, Executable, etc"
 	Kenneth Mensah -  "Development Manager - Developing - New Line, Executable, etc"
 	Grayson Stiegler -  "Marketing and Branding Manager - Project name, README, AUTHORS, Documentation"
-
-
-
-
 
 # **Installation and Usage**
 
@@ -41,14 +35,23 @@ sure you have some of the requriements you need including:
 	4. Import the package `checksOnChecks`
 	5. Run the `main.py` file in the command line
 
-**To Check for a new line**
+**To check for a new line**
 
 
 ![NEW LINE](newline.png)
 
 
 
+**To check for README**
 
+
+![README]()
+
+
+**To check if file is exectuable**
+
+
+![EXECTUABLE]()
 
 
 
