@@ -21,10 +21,10 @@ except ImportError:
     print("see https://gitpython.readthedocs.io/en/stable/intro.html\
           for more details")
 
-failed_check_dict = {}
+failed_check_list = []
 # get checker api auth_token and check if they are missing any checks
 authToken = get_auth(sys.argv[1], sys.argv[2], sys.argv[3])
-failed_check_dict = find_failed_checks(authToken, sys.argv[4])
+failed_check_list = find_failed_checks(authToken, sys.argv[4])
 
 # if missing checks clone repo to check for basic mistakes
 
@@ -36,14 +36,18 @@ with tempfile.TemporaryDirectory() as path:
     repo = variable["repo"]
     # git clone the repo to the path
     print("getting Repo")
-    if failed_check_dict == {}:
+    if failed_check_list:
         git.Git(path).clone(repo)
         my_check = Checks()
         my_check.check_README(path)
         my_check.check_executable(path)
 
-print('You have {:d} with missing requirement checks'
-      .format(len(failed_check_dict)))
+print(failed_check_list)
+if len(failed_check_list) == 1:
+    print('You have {:d} task with missing requirement checks')
+else if len(failed_check_list) > 1:
+    print('You have {:d} tasks with missing requirement checks')
+      .format(len(failed_check_list)))
 commonMistakes = """      Common Mistakes you may have missed
 
                  Did you remember all the semicolons
@@ -56,6 +60,4 @@ commonMistakes = """      Common Mistakes you may have missed
                  Are you printing the required output?
                  Did you follow all the directions for this task?
                 """
-for key in failed_check_dict.keys():
-    print(key)
-    print(commonMistakes)
+print(commonMistakes)
