@@ -35,25 +35,16 @@ If you are missing and requirement checks, we have you back! :)
 	4. Import the package `checksOnChecks`
 	5. Run the `main.py` file in the command line
 
+	6. Type {“repo”: “”, “subfolder”: “”} where "repo" is the link to the project
+	   page, and "subfolder" is the project name
+	7. The user also needs to type:
+	   ./main.py "API KEY" "EMAIL" "PASSWORD"
+
+
 **To check for a new line**
 
 
 ![NEW LINE](newline.png)
-
-
-
-**To check for README**
-
-
-![README]()
-
-
-**To check if file is exectuable**
-
-
-![EXECTUABLE]()
-
-
 
 # **Authors**
 
