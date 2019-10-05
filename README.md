@@ -37,14 +37,16 @@ If you are missing and requirement checks, we have you back! :)
 
 	6. Type {“repo”: “”, “subfolder”: “”} where "repo" is the link to the project
 	   page, and "subfolder" is the project name
-	7. The user also needs to type:
+	7. echo "{\"repo\": \"https://intranet.hbtn.io/projects/292\", \"subfolder\": \"0x0A Configuration management\"}" > vars.json
+	8. The user also needs to type:
 	   ./main.py "API KEY" "EMAIL" "PASSWORD"
 
 
-**To check for a new line**
 
+**All Requirements**
 
-![NEW LINE](newline.png)
+![ALL REQ](allreq.png)
+
 
 # **Authors**
 
